@@ -1,5 +1,0 @@
-com\jinhao\crowd\mvc\config\CrowdExceptionResolver.class
-com\jinhao\crowd\service\api\AdminService.class
-com\jinhao\crowd\mvc\handler\TestHandler.class
-com\jinhao\crowd\service\impl\AdminServiceImpl.class
-com\jinhao\crowd\mapper\AdminMapper.class
