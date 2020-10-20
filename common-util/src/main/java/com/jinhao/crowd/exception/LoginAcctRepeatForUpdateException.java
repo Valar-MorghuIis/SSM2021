@@ -5,27 +5,27 @@ package com.jinhao.crowd.exception;
  *
  * @author Valar Morghulis
  */
-public class LoginAcctRepeatException extends RuntimeException{
+public class LoginAcctRepeatForUpdateException extends RuntimeException{
 
-    static final long serialVersionUID = 9L;
+    static final long serialVersionUID = 21L;
 
-    public LoginAcctRepeatException() {
+    public LoginAcctRepeatForUpdateException() {
         super();
     }
 
-    public LoginAcctRepeatException(String message) {
+    public LoginAcctRepeatForUpdateException(String message) {
         super(message);
     }
 
-    public LoginAcctRepeatException(String message, Throwable cause) {
+    public LoginAcctRepeatForUpdateException(String message, Throwable cause) {
         super(message, cause);
     }
 
-    public LoginAcctRepeatException(Throwable cause) {
+    public LoginAcctRepeatForUpdateException(Throwable cause) {
         super(cause);
     }
 
-    protected LoginAcctRepeatException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
+    protected LoginAcctRepeatForUpdateException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
         super(message, cause, enableSuppression, writableStackTrace);
     }
 }
