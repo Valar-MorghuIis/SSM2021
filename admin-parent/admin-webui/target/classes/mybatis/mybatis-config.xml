@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+
+    <!--为实体类设置别名，package name中是包名，定义别名为与该实体类的类名相同-->
+    <typeAliases>
+        <package name="com.jinhao.crowd.entity"/>
+    </typeAliases>
+
+</configuration>
