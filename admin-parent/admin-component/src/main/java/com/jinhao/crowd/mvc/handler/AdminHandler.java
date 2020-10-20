@@ -25,6 +25,28 @@ public class AdminHandler {
     @Autowired
     private AdminService adminService;
 
+    @RequestMapping("/admin/do/update.html")
+    public String updateAdmin(Admin admin,
+                              @RequestParam("pageNum") Integer pageNum,
+                              @RequestParam("keyword") String keyword){
+        adminService.updateAdmin(admin);
+
+        return "redirect:/admin/get/page.html?pageNum=" + pageNum +"&keyword=" + keyword;
+    }
+
+    @RequestMapping("/admin/to/edit.html")
+    public String editAdmin(@RequestParam("adminId") Integer adminId,
+                            @RequestParam("pageNum") Integer pageNum,
+                            @RequestParam("keyword") String keyword,
+                            ModelMap modelMap){
+
+        Admin admin = adminService.getAdminById(adminId);
+
+        modelMap.addAttribute("admin",admin);
+
+        return "admin-edit";
+    }
+
     @RequestMapping("/admin/save.html")
     public String saveAdmin(Admin admin){
         adminService.saveAdmin(admin);

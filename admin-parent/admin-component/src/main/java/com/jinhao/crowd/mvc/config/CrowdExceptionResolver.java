@@ -2,6 +2,7 @@ package com.jinhao.crowd.mvc.config;
 
 import com.google.gson.Gson;
 import com.jinhao.crowd.exception.LoginAcctRepeatException;
+import com.jinhao.crowd.exception.LoginAcctRepeatForUpdateException;
 import com.jinhao.crowd.exception.LoginFailedException;
 import com.jinhao.crowd.util.CrowdConstant;
 import com.jinhao.crowd.util.CrowdUtil;
@@ -23,6 +24,15 @@ import java.io.IOException;
  */
 @ControllerAdvice
 public class CrowdExceptionResolver {
+
+    @ExceptionHandler(value = LoginAcctRepeatForUpdateException.class)
+    public ModelAndView resolerLoginAcctRepeatForUpdateException(HttpServletRequest request,
+                                                        LoginAcctRepeatForUpdateException exception,
+                                                        HttpServletResponse response) throws IOException {
+        String viewName = "system-error";
+        ModelAndView modelAndView = commonResolver(viewName, request, response, exception);
+        return modelAndView;
+    }
 
     @ExceptionHandler(value = LoginAcctRepeatException.class)
     public ModelAndView resolerLoginAcctRepeatException(HttpServletRequest request,

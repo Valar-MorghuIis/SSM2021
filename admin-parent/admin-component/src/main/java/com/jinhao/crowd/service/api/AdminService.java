@@ -21,4 +21,8 @@ public interface AdminService {
     PageInfo<Admin> getPageInfo(String keyword,Integer pageNum,Integer pageSize);
 
     void removeAdmin(Integer adminId);
+
+    Admin getAdminById(Integer adminId);
+
+    void updateAdmin(Admin admin);
 }

@@ -5,6 +5,7 @@ import com.github.pagehelper.PageInfo;
 import com.jinhao.crowd.entity.Admin;
 import com.jinhao.crowd.entity.AdminExample;
 import com.jinhao.crowd.exception.LoginAcctRepeatException;
+import com.jinhao.crowd.exception.LoginAcctRepeatForUpdateException;
 import com.jinhao.crowd.exception.LoginFailedException;
 import com.jinhao.crowd.mapper.AdminMapper;
 import com.jinhao.crowd.service.api.AdminService;
@@ -118,4 +119,26 @@ public class AdminServiceImpl implements AdminService {
     public void removeAdmin(Integer adminId) {
         adminMapper.deleteByPrimaryKey(adminId);
     }
+
+    @Override
+    public Admin getAdminById(Integer adminId) {
+         return adminMapper.selectByPrimaryKey(adminId);
+    }
+
+    @Override
+    public void updateAdmin(Admin admin) {
+        // 有选择的更新，对于null值不更新
+        try {
+            adminMapper.updateByPrimaryKeySelective(admin);
+        } catch (Exception e) {
+            e.printStackTrace();
+            e.printStackTrace();
+            if (e instanceof DuplicateKeyException) {
+                throw new LoginAcctRepeatForUpdateException(CrowdConstant.MESSAGE_LOGIN_FAILED_NOT_UNIQUE);
+            } else {
+                throw e;
+            }
+        }
+    }
+
 }
