@@ -1,6 +1,9 @@
 import com.jinhao.crowd.entity.Admin;
+import com.jinhao.crowd.entity.Role;
 import com.jinhao.crowd.mapper.AdminMapper;
+import com.jinhao.crowd.mapper.RoleMapper;
 import com.jinhao.crowd.service.api.AdminService;
+import com.jinhao.crowd.service.api.RoleService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,6 +32,16 @@ public class JDBCTest {
 
     @Autowired
     private AdminService adminService;
+
+    @Autowired
+    private RoleMapper roleMapper;
+
+    @Test
+    public void testRole(){
+        for (int i = 0; i < 137; i++) {
+            roleMapper.insert(new Role(null,"role" + i));
+        }
+    }
 
     @Test
     public void testService() {
