@@ -8,6 +8,7 @@ import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
 public interface AdminMapper {
+    // test
     int countByExample(AdminExample example);
 
     int deleteByExample(AdminExample example);
