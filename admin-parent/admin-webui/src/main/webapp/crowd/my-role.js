@@ -57,6 +57,9 @@ function fillTableBody(pageInfo) {
     // 清除旧数据
     $("#rolePageBody").empty();
 
+    // 没有数据结果的时候，清空导航条
+    $("#Pagination").empty();
+
     if (pageInfo == null || pageInfo == undefined || pageInfo.list == null || pageInfo.list.length == 0){
         $("#rolePageBody").append("<tr><td colspan='4'>抱歉！没有查询到数据</td></tr>")
         return;

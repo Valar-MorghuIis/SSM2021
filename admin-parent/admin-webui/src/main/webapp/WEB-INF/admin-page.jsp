@@ -118,7 +118,7 @@
                             <tfoot>
                             <tr>
                                 <td colspan="6" align="center">
-                                    <div id="Pagination" class="pagination"><!-- 这里显示分页 -->${requestScope.pageInfo.total}</div>
+                                    <div id="Pagination" class="pagination"><!-- 这里显示分页 --></div>
                                 </td>
                             </tr>
 
