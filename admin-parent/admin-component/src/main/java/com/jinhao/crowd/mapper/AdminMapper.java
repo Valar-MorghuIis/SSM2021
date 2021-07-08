@@ -11,6 +11,7 @@ public interface AdminMapper {
     // test
     int countByExample(AdminExample example);
 
+    // test
     int deleteByExample(AdminExample example);
 
     int deleteByPrimaryKey(Integer id);
